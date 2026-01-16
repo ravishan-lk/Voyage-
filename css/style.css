@@ -12,15 +12,15 @@
     --bg-dark: #111827;
     --white: #ffffff;
     --border-color: #e5e7eb;
-    
+
     /* Spacing */
     --container-width: 1200px;
     --header-height: 80px;
     --section-spacing: 100px;
-    
+
     /* Fonts */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -74,7 +74,10 @@ img {
     max-width: 800px;
 }
 
-.text-center { text-align: center; }
+.text-center {
+    text-align: center;
+}
+
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
     -webkit-background-clip: text;
@@ -85,7 +88,9 @@ img {
     padding: var(--section-spacing) 0;
 }
 
-.bg-light { background-color: var(--bg-light); }
+.bg-light {
+    background-color: var(--bg-light);
+}
 
 .section-header {
     margin-bottom: 60px;
@@ -314,16 +319,25 @@ img {
 .blob-2 {
     width: 500px;
     height: 500px;
-    background: #ec4899; /* Pink accent */
+    background: #ec4899;
+    /* Pink accent */
     bottom: 0;
     right: -100px;
     animation-delay: 2s;
 }
 
 @keyframes float {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(20px, 40px); }
-    100% { transform: translate(0, 0); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 .hero-content {
@@ -412,10 +426,21 @@ img {
     animation: fadeUp 0.8s forwards ease-out;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
 
 @keyframes fadeUp {
     to {
@@ -452,9 +477,36 @@ img {
     margin-bottom: 24px;
 }
 
-.icon-blue { background: #eff6ff; color: #3b82f6; }
-.icon-purple { background: #f5f3ff; color: #8b5cf6; }
-.icon-pink { background: #fdf2f8; color: #ec4899; }
+.icon-blue {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.icon-purple {
+    background: #f5f3ff;
+    color: #8b5cf6;
+}
+
+.icon-pink {
+    background: #fdf2f8;
+    color: #ec4899;
+}
+
+/* New component styles for image match */
+.icon-solid {
+    background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    color: var(--white);
+}
+
+.large-percent {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #6366f1;
+    /* Matching the indigo/purple brand color */
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
 
 .service-card h3 {
     font-size: 1.25rem;
@@ -480,7 +532,8 @@ img {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 24px; /* Adjust for marker centering */
+    left: 24px;
+    /* Adjust for marker centering */
     top: 0;
     bottom: 0;
     width: 2px;
@@ -645,7 +698,8 @@ img {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Rough estimate for animation */
+    max-height: 200px;
+    /* Rough estimate for animation */
     padding-bottom: 24px;
 }
 
@@ -731,36 +785,39 @@ img {
    12. RESPONSIVE
 ------------------------------------------------------------------ */
 @media (max-width: 768px) {
-    .nav-menu, .header-actions .btn {
-        display: none; /* Hide default nav items */
+
+    .nav-menu,
+    .header-actions .btn {
+        display: none;
+        /* Hide default nav items */
     }
-    
+
     .mobile-toggle {
         display: block;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-stats {
         flex-direction: column;
         gap: 16px;
     }
-    
+
     .stat-divider {
         width: 40px;
         height: 1px;
     }
-    
+
     .pricing-card.popular {
         transform: scale(1);
     }
-    
+
     .timeline::before {
         left: 20px;
     }
-    
+
     .timeline-item {
         padding-left: 60px;
     }
@@ -768,6 +825,6 @@ img {
     .timeline-marker {
         width: 40px;
         height: 40px;
-        left: 0; 
+        left: 0;
     }
 }
