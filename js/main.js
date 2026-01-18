@@ -1,65 +1,81 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Mobile Menu Toggle ---
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const mobileClose = document.querySelector('.mobile-close');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    function toggleMenu() {
-        mobileMenu.classList.toggle('active');
-    }
-
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', toggleMenu);
-    }
-
-    if (mobileClose) {
-        mobileClose.addEventListener('click', toggleMenu);
-    }
-
-    // Close menu when a link is clicked
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-             mobileMenu.classList.remove('active');
-        });
-    });
-
-    // --- Sticky Header Scroll Effect ---
-    const header = document.querySelector('#header');
-    
+    // 1. Navigation Scroll Effect
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+            navbar.classList.add('scrolled');
         } else {
-            header.style.background = 'rgba(255, 255, 255, 0.8)';
-            header.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
         }
     });
 
-    // --- FAQ Accordion ---
-    const faqItems = document.querySelectorAll('.faq-item');
+    // 2. Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Close other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
             });
+        });
+    }
 
-            // Toggle current item
-            item.classList.toggle('active');
+    // 3. Smooth Scroll for Anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const target = document.querySelector(targetId);
+            if (target) {
+                // Adjust for fixed header
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
-    // --- Scroll Animations (Simple Reveal) ---
+    // 4. FAQ Accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Toggle clicked
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+
+    // 5. Intersection Observer for Animations (Fade Up)
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -71,21 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.card, .timeline-item, .section-header').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    // Observe specific elements
+    document.querySelectorAll('.timeline-item, .service-card, .tool-card, .fade-in-up').forEach(el => {
         observer.observe(el);
     });
 
-    // Add class for visible state in CSS dynamically or updated style above
-    // Let's add the dynamic style injection for the observation just to be sure
-    const styleSheet = document.createElement("style");
-    styleSheet.innerText = `
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(styleSheet);
 });
