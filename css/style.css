@@ -403,8 +403,8 @@ ol {
     width: 200px;
     /* Adjust based on badge size */
     height: 60px;
-    background-color: #06070a;
-    /* Matches site background */
+    background-color: #000000;
+    /* Matches more closely with Spline bg if needed */
     z-index: 10;
     pointer-events: none;
     /* Let clicks pass through if needed, though usually just visual */
@@ -768,6 +768,12 @@ ol {
     /* Full width */
     margin: 0;
     /* Align left */
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        justify-content: center;
+    }
 }
 
 .tool-card {
