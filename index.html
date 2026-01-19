@@ -71,7 +71,8 @@
 
 
             <div class="hero-bottom">
-                <p class="hero-subtext">We bring everything your business needs under one roof. Start your journey with
+                <p class="hero-subtext">We bring everything your business needs under one roof.<br> Start your journey
+                    with
                     us today.</p>
 
                 <div class="hero-badges">
@@ -297,43 +298,63 @@
             </div>
 
             <div class="pricing-grid">
-                <!-- Base Package -->
+                <!-- Starter Package (The Decoy) -->
                 <div class="pricing-card">
+                    <h3 class="pricing-title">Starter Package</h3>
+                    <p class="pricing-subtitle">Essential web presence</p>
+
+                    <div class="pricing-cost">
+                        <span class="currency">$</span>999<span class="period">/ project</span>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 5-Page Responsive Website</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> Contact Form Integration</li>
+                        <li><i class="fas fa-check"></i> 1 Month Support</li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+
+                <!-- Base Package (The Hero / Profit Driver) -->
+                <div class="pricing-card popular" style="transform: scale(1.05); z-index: 2;">
+                    <div class="popular-badge">MOST POPULAR</div>
                     <h3 class="pricing-title">Base Package</h3>
-                    <p class="pricing-subtitle">Perfect for getting started</p>
+                    <p class="pricing-subtitle">Growth-focused solution</p>
 
                     <div class="pricing-cost">
                         <span class="currency">$</span>1,999<span class="period">/ project</span>
                     </div>
 
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Digital strategy consultation</li>
-                        <li><i class="fas fa-check"></i> Responsive website design</li>
-                        <li><i class="fas fa-check"></i> Basic SEO setup</li>
-                        <li><i class="fas fa-check"></i> Analytics integration</li>
-                        <li><i class="fas fa-check"></i> 14 days post-launch support</li>
+                        <li><i class="fas fa-check"></i> <strong>Everything in Starter</strong></li>
+                        <li><i class="fas fa-check"></i> Digital Strategy Consultation</li>
+                        <li><i class="fas fa-check"></i> CMS Integration (WordPress/Webflow)</li>
+                        <li><i class="fas fa-check"></i> Analytics & Performance Tracking</li>
+                        <li><i class="fas fa-check"></i> Social Media Setup</li>
+                        <li><i class="fas fa-check"></i> <strong>3 Months Priority Support</strong></li>
                     </ul>
 
                     <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
                 </div>
 
-                <!-- Enterprise Package -->
-                <div class="pricing-card popular">
-                    <div class="popular-badge">MOST POPULAR</div>
+                <!-- Enterprise Package (The Anchor) -->
+                <div class="pricing-card">
                     <h3 class="pricing-title">Enterprise Package</h3>
-                    <p class="pricing-subtitle">For businesses ready to scale</p>
+                    <p class="pricing-subtitle">Full-scale digital transformation</p>
 
                     <div class="pricing-cost">
-                        <span class="currency">$</span>2,999<span class="period">/ project</span>
+                        <span class="currency">$</span>4,999<span class="period">/ project</span>
                     </div>
 
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> <strong>Everything in Base</strong></li>
-                        <li><i class="fas fa-check"></i> Advanced Custom Web App</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO & Content Strategy</li>
-                        <li><i class="fas fa-check"></i> Custom API Integrations</li>
+                        <li><i class="fas fa-check"></i> Custom Web Application (React/Next.js)</li>
+                        <li><i class="fas fa-check"></i> Advanced API Integrations</li>
+                        <li><i class="fas fa-check"></i> Full SEO & Content Strategy</li>
                         <li><i class="fas fa-check"></i> Dedicated Project Manager</li>
-                        <li><i class="fas fa-check"></i> 30 days Priority Support</li>
+                        <li><i class="fas fa-check"></i> 6 Months VIP Support</li>
                     </ul>
 
                     <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
@@ -422,12 +443,16 @@
         </div>
     </section>
 
-    <section id="contact" style="padding: 4rem 0; text-align: center;">
-        <div class="container">
-            <h2 class="section-title">Ready to Start?</h2>
-            <a href="mailto:hello@voyage.com" class="btn btn-large btn-gradient">Contact Us</a>
-        </div>
-    </section>
+    <!-- Animated CTA Section -->
+    <div class="container" style="margin-bottom: 4rem;">
+        <section class="cta-section">
+            <canvas id="cta-particles"></canvas>
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to accelerate your business?</h2>
+                <a href="#contact" class="btn btn-white-cta">Book Your Strategy Call</a>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <div class="container">
