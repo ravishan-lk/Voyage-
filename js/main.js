@@ -112,9 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
+                this.vx = (Math.random() - 0.5) * 2; // Faster speed (was 0.5)
+                this.vy = (Math.random() - 0.5) * 2; // Faster speed
+                this.size = Math.random() * 3 + 1.5;
             }
 
             update() {
@@ -129,13 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'; // Stronger opacity
                 ctx.fill();
             }
         }
 
         // Init Particles
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 120; i++) { // Even more particles
             particles.push(new Particle());
         }
 
@@ -154,10 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = p.y - p2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 100) {
+                    if (dist < 150) { // Connect even further
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - dist / 500})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.5 - dist / 400})`; // Much stronger lines
+                        ctx.lineWidth = 1; // Thicker lines
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
                         ctx.stroke();
