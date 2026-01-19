@@ -129,13 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'; // Stronger opacity
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; // Reduced opacity (was 0.8)
                 ctx.fill();
             }
         }
 
         // Init Particles
-        for (let i = 0; i < 120; i++) { // Even more particles
+        for (let i = 0; i < 120; i++) { // Keep count
             particles.push(new Particle());
         }
 
@@ -154,10 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = p.y - p2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 150) { // Connect even further
+                    if (dist < 150) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.5 - dist / 400})`; // Much stronger lines
-                        ctx.lineWidth = 1; // Thicker lines
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - dist / 600})`; // Weaker lines (was 0.5 base)
+                        ctx.lineWidth = 0.5; // Thinner lines (was 1)
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
                         ctx.stroke();

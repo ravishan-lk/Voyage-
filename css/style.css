@@ -1017,7 +1017,8 @@ ol {
 .cta-section {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 450px;
+    /* Increased height for more space */
     background: linear-gradient(135deg, #fe621d 0%, #ff8e5e 100%);
     /* Default Orange Fallback if JS fails, but we want Purple */
     background: #5e35cb;
