@@ -15,9 +15,11 @@
 }
 
 .pricing-card {
-    background: #020205;
-    /* Very dark background */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(8, 8, 12, 0.4);
+    /* Glassmorphism base */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1.5rem;
     padding: 3rem 2rem;
     text-align: center;
@@ -30,10 +32,13 @@
 }
 
 .pricing-card.popular {
-    background: #050508;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    /* Subtle indigo tint borders for premium feel */
-    box-shadow: 0 0 50px rgba(99, 102, 241, 0.15);
+    background: rgba(10, 10, 20, 0.6);
+    /* Slightly darker/tinted for popular */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(94, 53, 203, 0.4);
+    /* Subtle purple tint borders for premium feel */
+    box-shadow: 0 0 50px rgba(94, 53, 203, 0.15);
 }
 
 .pricing-card:hover {
