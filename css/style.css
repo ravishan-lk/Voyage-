@@ -195,8 +195,26 @@ ol {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
-    position: relative;
     z-index: 1;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
 }
 
 .gradient-text {
@@ -583,13 +601,13 @@ ol {
 
 .service-card {
     padding: var(--spacing-xl);
-    background: rgba(10, 10, 15, 0.4);
-    /* Glassmorphism background */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(16, 16, 24, 0.5);
+    /* iOS Glass Dark */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border-radius: var(--radius-xl);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -709,13 +727,15 @@ ol {
 
 /* The Card Content */
 .timeline-content {
-    background: linear-gradient(180deg, rgba(30, 30, 30, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+    background: rgba(16, 16, 24, 0.5);
+    /* iOS Glass Dark - Removed Gradient to allow transparency */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: 2rem;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Number Badge generic style */
@@ -811,9 +831,10 @@ ol {
 }
 
 .benefit-card {
-    background: rgba(10, 10, 15, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(16, 16, 24, 0.5);
+    /* iOS Glass Dark */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: 2rem;
@@ -859,19 +880,19 @@ ol {
 }
 
 #tools .section-header {
-    text-align: left;
+    text-align: center;
 }
 
 .tools-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    /* Left align */
+    justify-content: center;
+    /* Center align */
     gap: 1.5rem;
     max-width: 100%;
     /* Full width */
-    margin: 0;
-    /* Align left */
+    margin: 0 auto;
+    /* Center align */
 }
 
 @media (max-width: 768px) {
@@ -881,11 +902,11 @@ ol {
 }
 
 .tool-card {
-    background: rgba(10, 10, 15, 0.4);
-    /* Glassmorphism background */
-    backdrop-filter: blur(12px);
+    background: rgba(16, 16, 24, 0.5);
+    /* iOS Glass Dark */
+    backdrop-filter: blur(25px);
     /* Blur effect */
-    -webkit-backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     /* Subtle border */
     border-radius: var(--radius-lg);
