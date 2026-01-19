@@ -15,10 +15,10 @@
 }
 
 .pricing-card {
-    background: rgba(8, 8, 12, 0.4);
-    /* Glassmorphism base */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(16, 16, 24, 0.5);
+    /* iOS Glass Dark */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1.5rem;
     padding: 3rem 2rem;
@@ -82,7 +82,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
     /* Gradient Price */
     margin-bottom: 2rem;
     display: flex;
