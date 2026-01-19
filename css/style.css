@@ -350,14 +350,18 @@ ol {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, #a78bfa 0%, #5e35cb 50%, #3b82f6 100%);
+    /* Metallic-like purple/blue gradient */
     color: white;
+    box-shadow: 0 4px 15px rgba(94, 53, 203, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    /* Outer shadow + Inner shine */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
     filter: brightness(1.2);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(94, 53, 203, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .btn-gradient {
